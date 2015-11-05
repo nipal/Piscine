@@ -6,14 +6,14 @@
 #    By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/03 22:11:07 by fjanoty           #+#    #+#              #
-#    Updated: 2015/11/05 06:47:44 by fjanoty          ###   ########.fr        #
+#    Updated: 2015/11/05 07:14:16 by fjanoty          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
 
 .SUFFIXES:
 
-NAME = do-op
+NAME = libft.a
 
 H = includes
 
@@ -29,7 +29,9 @@ SRC = $(addprefix srcs/,$(S))
 all : $(NAME)
 
 $(NAME) :
-	gcc -Wall -Wextra -Werror $(SRC) -I $(H) -o $(NAME)
-clean :
+	gcc -Wall -Wextra -Werror $(SRC) -I $(H)
+clean : 
+	rm  $(O)
+fclean : clean
 	rm $(NAME)
-re : clean all
+re : fclean all
