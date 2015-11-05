@@ -6,7 +6,7 @@
 #    By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/03 22:11:07 by fjanoty           #+#    #+#              #
-#    Updated: 2015/11/05 05:25:20 by fjanoty          ###   ########.fr        #
+#    Updated: 2015/11/05 06:47:44 by fjanoty          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -32,4 +32,4 @@ $(NAME) :
 	gcc -Wall -Wextra -Werror $(SRC) -I $(H) -o $(NAME)
 clean :
 	rm $(NAME)
-re : fclean all
+re : clean all

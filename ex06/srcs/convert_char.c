@@ -6,7 +6,7 @@
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 07:44:28 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/05 05:40:25 by fjanoty          ###   ########.fr       */
+/*   Updated: 2015/11/05 06:49:46 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int			what_operator(char *str)
 
 	i = 0;
 	ope = ft_strdup("+-*/%");
-	if(str && str[0] && i < 5)
+	if(str && str[0] && ope[i] && !str[1])
 	{
 		while (i < 5)
 		{

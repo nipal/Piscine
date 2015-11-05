@@ -6,7 +6,7 @@
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 00:21:41 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/05 05:53:48 by fjanoty          ###   ########.fr       */
+/*   Updated: 2015/11/05 06:41:18 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	affichator(long a, long b, int i)
 		f = init_operator(i);
 		if (i == -1)
 		{
-			
+			ft_putstr("0\n");
+			return;
 		}
 		ft_putnbr(f(a, b));
 		ft_putchar('\n');
