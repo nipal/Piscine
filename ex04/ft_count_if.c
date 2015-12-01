@@ -6,7 +6,7 @@
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/03 23:59:09 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/04 00:05:28 by fjanoty          ###   ########.fr       */
+/*   Updated: 2015/11/27 18:19:59 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int	ft_count_if(char **tab, int(*f)(char*))
 	i = -1;
 	nb = 0;
 	while (tab[++i])
-		nb += (f(tab[i]) ? 1 : 0);
+		nb += (f(tab[i] == 1) ? 1 : 0);
 	return (nb);
 }

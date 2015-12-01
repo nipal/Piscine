@@ -6,44 +6,27 @@
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 07:44:28 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/06 13:55:18 by fjanoty          ###   ########.fr       */
-/*                                                                            */
+/*   Updated: 2015/11/27 22:53:41 by fjanoty          ###   ########.fr       */
+/*                                                                          */
 /* ************************************************************************** */
 
 #include "convert_char.h"
 
-t_operateur	init_operator(int nb_ope)
-{
-	t_operateur	tab_ft[5];
-
-	tab_ft[0] = &ft_add;
-	tab_ft[1] = &ft_sub;
-	tab_ft[2] = &ft_mul;
-	tab_ft[3] = &ft_div;
-	tab_ft[4] = &ft_mod;
-	return (tab_ft[nb_ope]);
-}
-
-int			what_operator(char *str)
+int		what_operator(char *str, t_opp func)
 {
 	int		i;
-	char	*ope;
 
 	i = 0;
-	ope = ft_strdup("+-*/%");
-	if (str && str[0] && ope[i] && !str[1])
+	while (str && i < 6)
 	{
-		while (ope[i])
-		{
-			if (str[0] == ope[i])
-				return (i);
-			i++;
-		}
+		if (ope[i] && ft_strcmp(func[i][0], str) == 0)
+			return (i);
+		i++;
 	}
 	return (-1);
 }
 
-long		ft_atol(char *str)
+long			ft_atol(char *str)
 {
 	int		i;
 	long	nbr;

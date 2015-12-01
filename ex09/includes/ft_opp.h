@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   ft_opp.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 23:55:31 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/27 18:19:19 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/11/04 07:52:07 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/11/27 22:25:43 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int(*f)(char*))
+#ifndef __FT_OPP_H__
+# define __FT_OPP_H__
+t_opp gl_opptab[] =
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		if (f(tab[i]) == 1)
-			return (1);
-		i++;
-	}
-	return (0);
-}
+	{"+", &ft_add},
+	{"-", &ft_sub},
+	{"*", &ft_mul},
+	{"/", &ft_div},
+	{"%", &ft_mod},
+	{"", &ft_usage}
+};
+#endif /* __FT_OPP_H__ *

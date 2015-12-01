@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   ft_usage.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 23:55:31 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/27 18:19:19 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/11/04 00:32:41 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/11/27 22:57:21 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int(*f)(char*))
-{
-	int	i;
+#ifndef FT_USAGE_H
+# define FT_USAGE_H
 
-	i = 0;
-	while (tab[i])
-	{
-		if (f(tab[i]) == 1)
-			return (1);
-		i++;
-	}
-	return (0);
-}
+long	ft_usage(long a, long b);
+#endif

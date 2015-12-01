@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   func.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 23:55:31 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/27 18:19:19 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/11/04 00:25:15 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/11/05 05:30:42 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int(*f)(char*))
-{
-	int	i;
+#include <func.h>
 
-	i = 0;
-	while (tab[i])
-	{
-		if (f(tab[i]) == 1)
-			return (1);
-		i++;
-	}
-	return (0);
+long	ft_add(long a, long b)
+{
+	return (a + b);
+}
+
+long	ft_sub(long a, long b)
+{
+	return (a - b);
+}
+
+long	ft_mul(long a, long b)
+{
+	return (a * b);
+}
+
+long	ft_div(long a, long b)
+{
+	return (a / b);
+}
+
+long	ft_mod(long a, long b)
+{
+	return (a % b);
 }

@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 23:55:31 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/27 18:19:19 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/10/18 12:11:02 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/11/01 22:03:43 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int(*f)(char*))
-{
-	int	i;
+#include "ft.h"
 
-	i = 0;
-	while (tab[i])
+void	ft_putnbr(int nb)
+{
+	int	factor;
+
+	factor = 10000;
+	if (nb < 0)
 	{
-		if (f(tab[i]) == 1)
-			return (1);
-		i++;
+		ft_putchar('-');
+		ft_putnbr(-nb);
 	}
-	return (0);
+	else
+	{
+		if (nb != 0)
+		{
+			while ((nb / factor) == 0 && nb != 0)
+				factor /= 10;
+			while (factor != 0)
+			{
+				ft_putchar((nb / factor) % 10 + '0');
+				factor /= 10;
+			}
+		}
+		else
+		{
+			ft_putchar('0');
+		}
+	}
 }

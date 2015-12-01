@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   convert_char.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 23:55:31 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/27 18:19:19 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/11/04 07:52:07 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/11/27 22:53:31 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int(*f)(char*))
-{
-	int	i;
+#ifndef CONVERT_CHAR_H
+# define CONVERT_CHAR_H
 
-	i = 0;
-	while (tab[i])
-	{
-		if (f(tab[i]) == 1)
-			return (1);
-		i++;
-	}
-	return (0);
-}
+# include <stdlib.h>
+# include "func.h"
+# include "ft_put.h"
+# include "ft_opp.h"
+# include "ft_strcmp"
+
+typedef	long	(*t_operateur) (long, long);
+t_operateur		init_operator(int nb_ope);
+long			ft_atol(char *str);
+int				what_operator(char *str);
+#endif
