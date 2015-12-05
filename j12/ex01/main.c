@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#define	BUFFER 100
+#include "main.h"
 
 int		ft_strlen(char *str)
 {
@@ -43,6 +39,11 @@ void	ft_print_file(char *name)
 	char	buff[BUFFER + 1];
 
 	fd = open(name, O_RDONLY, S_IREAD);
+	if (fd == -1)
+	{
+		ft_puterror("No such file or directory\n");
+		return;
+	}
 	oct_lu = 1;
 	while (oct_lu)
 	{
@@ -55,11 +56,18 @@ void	ft_print_file(char *name)
 
 int		main(int ac, char **av)
 {
+	int	i;
+
+	i = 1;
+	while (i < ac)
+	{
+		if (ac == 1)
+			ft_puterror("File name missing.\n");
+		else
+ 			ft_print_file(av[i]);
+	 	i++;
+	}
 	if (ac == 1)
 		ft_puterror("File name missing.\n");
-	else if (ac > 2)
-		ft_puterror("Too many arguments.\n");
-	else
-		ft_print_file(av[1]);
 	return (0);
 }
