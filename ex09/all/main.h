@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.h                                            :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 22:45:56 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/03 23:04:44 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/11/04 00:32:38 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/11/27 22:33:42 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_FILE_H
-#define PRINT_FILE_H
+#ifndef MAIN_H
+# define MAIN_H
 
-# include <errno.h>
-# include <unistd.h>
-# define	BUFFER 100
+# include "func.h"
+# include "convert_char.h"
+# include "ft_opp.h"
 
-char	*ft_strcpy(char *dest, cahr *src);
-int		ft_strlen(char *str);
-void	ft_puterror(char *str);
-void	ft_putstr(char *str);
-char	*ft_strdump(char *str)
-
+void	affichator(long a, long b, char *str);
 #endif

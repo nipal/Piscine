@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.h                                            :+:      :+:    :+:   */
+/*   func.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 22:45:56 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/03 23:04:44 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/11/04 00:25:15 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/11/05 05:30:42 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_FILE_H
-#define PRINT_FILE_H
+#include "func.h"
 
-# include <errno.h>
-# include <unistd.h>
-# define	BUFFER 100
+long	ft_add(long a, long b)
+{
+	return (a + b);
+}
 
-char	*ft_strcpy(char *dest, cahr *src);
-int		ft_strlen(char *str);
-void	ft_puterror(char *str);
-void	ft_putstr(char *str);
-char	*ft_strdump(char *str)
+long	ft_sub(long a, long b)
+{
+	return (a - b);
+}
 
-#endif
+long	ft_mul(long a, long b)
+{
+	return (a * b);
+}
+
+long	ft_div(long a, long b)
+{
+	return (a / b);
+}
+
+long	ft_mod(long a, long b)
+{
+	return (a % b);
+}

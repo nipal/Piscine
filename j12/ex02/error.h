@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,49 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ft.h"
+#ifndef ERROR_H
+#define ERROR_H
 
-int		ft_strlen(char *str)
-{
-	int	i;
+# include <stdlib.h>
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-void	ft_puterror(char *str)
-{
-	write(2, str, ft_strlen(str));
-}
-
-void	ft_putstr(char *str)
-{
-	write(1, str, ft_strlen(str));
-}
-
-char	*ft_strdump(char *str)
-{
-	int		i;
-	char	*dest
-
-	i = 0;
-	dest = (char*)malloc((sizeof(char) + 1) * ft_strlen(str));
-	while (str[i])
-	{
-		dest[i] = str[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-void	ft_swap_str(char **str1, char **str2)
-{
-	char	*temp;
-
-	temp = *str1;
-	*str1 = *str2;
-	*str2 = temp;
-}
+void			free_tab_err(char **tab);
+char			**init_tab_err();
+#endif

@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.h                                            :+:      :+:    :+:   */
+/*   ft_atoi_verif.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 22:45:56 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/03 23:04:44 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/10/19 21:07:28 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/10/21 14:17:21 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_FILE_H
-#define PRINT_FILE_H
+#ifndef FT_ATOI_VERIF_H
+#define FT_ATOI_VERIF_H
 
-# include <errno.h>
-# include <unistd.h>
-# define	BUFFER 100
+# define WRONG_NUMBER -1
+# define INFINIT_NUMBER -2
 
-char	*ft_strcpy(char *dest, cahr *src);
-int		ft_strlen(char *str);
-void	ft_puterror(char *str);
-void	ft_putstr(char *str);
-char	*ft_strdump(char *str)
+int	ft_atoi(char *str);
 
 #endif

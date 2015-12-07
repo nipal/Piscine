@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.h                                            :+:      :+:    :+:   */
+/*   ft_put.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 22:45:56 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/03 23:04:44 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/11/05 02:31:39 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/11/05 19:25:51 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_FILE_H
-#define PRINT_FILE_H
+#ifndef FT_PUT_H
+# define FT_PUT_H
 
-# include <errno.h>
 # include <unistd.h>
-# define	BUFFER 100
+# include <stdlib.h>
 
-char	*ft_strcpy(char *dest, cahr *src);
-int		ft_strlen(char *str);
-void	ft_puterror(char *str);
+void	ft_putchar(char c);
+void	ft_putnbr(long nb);
 void	ft_putstr(char *str);
-char	*ft_strdump(char *str)
-
+char	*ft_strdup(const char *src);
 #endif

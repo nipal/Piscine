@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   print_file.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,49 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ft.h"
+#ifndef PRINT_FILE_H
+#define PRINT_FILE_H
 
-int		ft_strlen(char *str)
-{
-	int	i;
+# include <errno.h>
+# include <stdlib.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include "ft_ft.h"
+# include "ft_atoi_verif.h"
+# define SIZE_BUFF 1000
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+static	int		init_var(char **buff1, char **buff2, int *oct_lu, int nb_char);
+void			ft_print_file(char *name, int nb_char, int fd);
+static	void	close_var(char *buff_actif, *buff_temp, int oct_lu);
 
-void	ft_puterror(char *str)
-{
-	write(2, str, ft_strlen(str));
-}
-
-void	ft_putstr(char *str)
-{
-	write(1, str, ft_strlen(str));
-}
-
-char	*ft_strdump(char *str)
-{
-	int		i;
-	char	*dest
-
-	i = 0;
-	dest = (char*)malloc((sizeof(char) + 1) * ft_strlen(str));
-	while (str[i])
-	{
-		dest[i] = str[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-void	ft_swap_str(char **str1, char **str2)
-{
-	char	*temp;
-
-	temp = *str1;
-	*str1 = *str2;
-	*str2 = temp;
-}
+#endif

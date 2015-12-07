@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 22:45:56 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/03 23:04:44 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/10/18 12:11:02 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/11/01 22:03:43 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_FILE_H
-#define PRINT_FILE_H
+void	ft_putnbr(int nb)
+{
+	int	factor;
 
-# include <errno.h>
-# include <unistd.h>
-# define	BUFFER 100
-
-char	*ft_strcpy(char *dest, cahr *src);
-int		ft_strlen(char *str);
-void	ft_puterror(char *str);
-void	ft_putstr(char *str);
-char	*ft_strdump(char *str)
-
-#endif
+	factor = 10000;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-nb);
+	}
+	else
+	{
+		if (nb != 0)
+		{
+			while ((nb / factor) == 0 && nb != 0)
+				factor /= 10;
+			while (factor != 0)
+			{
+				ft_putchar((nb / factor) % 10 + '0');
+				factor /= 10;
+			}
+		}
+		else
+		{
+			ft_putchar('0');
+		}
+	}
+}

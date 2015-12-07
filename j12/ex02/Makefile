@@ -13,18 +13,20 @@
 
 .SUFFIXES:
 
-NAME = ft_cat
+NAME = ft_tail
 
-S = main.c
+S = main.c\
+	error.c\
+	ft_atoi_verif.c
+	ft_ft\
+	print_file.c
 
-O = $(S:.c=.o)
-
-#SRC = $(addprefix srcs/,$(S))
+SRC = $(addprefix srcs/,$(S))
 
 all : $(NAME)
 
 $(NAME) :
-	gcc -Wall -Wextra -Werror $(S) -o $(NAME)
+	gcc -Wall -Wextra -Werror $(SRC) -I includes -o $(NAME)
 clean :
 	rm -f $(NAME)
 re : clean all

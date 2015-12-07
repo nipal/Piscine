@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_usage.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/03 22:45:56 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/11/03 23:04:44 by fjanoty          ###   ########.fr       */
+/*   Created: 2015/11/04 00:32:41 by fjanoty           #+#    #+#             */
+/*   Updated: 2015/11/27 22:57:21 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_C
-#define MAIN_C
+#ifndef FT_USAGE_H
+# define FT_USAGE_H
 
-#include "print_file.h"
-#include "ft_ft.h"
-#include "ft_atoi_verif.h"
-
+long	ft_usage(long a, long b);
 #endif
