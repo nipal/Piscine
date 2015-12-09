@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_file.h                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,20 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_FILE_H
-#define PRINT_FILE_H
+#ifndef MAIN_C
+#define MAIN_C
 
-# include <errno.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include "ft_ft.h"
-# include "ft_atoi_verif.h"
-# define SIZE_BUFF 1000
-
-static	int		init_var(char **buff1, char **buff2, int *oct_lu, int nb_char);
-void			ft_print_file(char *name, int nb_char, int fd);
-static	void	close_var(char *buff_actif, char *buff_temp, int oct_lu);
+#include "print_file.h"
+#include "ft_ft.h"
+#include "ft_atoi_verif.h"
+#include "error.h"
 
 #endif

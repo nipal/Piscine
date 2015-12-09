@@ -17,16 +17,22 @@ NAME = ft_tail
 
 S = main.c\
 	error.c\
-	ft_atoi_verif.c
-	ft_ft\
+	ft_atoi_verif.c\
+	ft_ft.c\
 	print_file.c
 
-SRC = $(addprefix srcs/,$(S))
+H = $(S:.c=.h)
+
+SRC = $(addprefix src/,$(S))
+
+flag = -Wall -Wextra -Werror
+
+INCL = $(addprefix src/,$(H))
 
 all : $(NAME)
 
 $(NAME) :
-	gcc -Wall -Wextra -Werror $(SRC) -I includes -o $(NAME)
+	gcc  $(SRC) $(INCL) #-o $(NAME)
 clean :
 	rm -f $(NAME)
 re : clean all

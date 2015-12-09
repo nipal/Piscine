@@ -27,44 +27,44 @@ void			free_tab_err(char **tab)
 
 static	void	init_tab_err_1(char **tab)
 {
-	tab[0] = ft_strdump("Succes");
-	tab[1] = ft_strdump("Operation not permitted");
-	tab[2] = ft_strdump("No such file or directory");
-	tab[3] = ft_strdump("No such process");
-	tab[4] = ft_strdump("Interrupted system call");
-	tab[5] = ft_strdump("I/O error");
-	tab[6] = ft_strdump("No such device or address");
-	tab[7] = ft_strdump("Argument list too long");
-	tab[8] = ft_strdump("Exec format error");
-	tab[9] = ft_strdump("Bad file number");
-	tab[10] = ft_strdump("No child processes");
-	tab[11] = ft_strdump("Try again");
-	tab[12] = ft_strdump("Out of memory");
-	tab[13] = ft_strdump("Permission denied");
-	tab[14] = ft_strdump("Bad address");
-	tab[15] = ft_strdump("Block device required");
-	tab[16] = ft_strdump("Device or resource busy");
-	tab[17] = ft_strdump("File exists");
-	tab[18] = ft_strdump("Cross-device link");
-	tab[19] = ft_strdump("No such device");
-	tab[20] = ft_strdump("Not a directory");
-	tab[21] = ft_strdump("Is a directory");
-	tab[22] = ft_strdump("Invalid argument");
-	tab[23] = ft_strdump("File table overflow");
-	tab[24] = ft_strdump("Too many open files");
+	tab[0] = (char*)ft_strdump("Succes\n");
+	tab[1] = ft_strdump("Operation not permitted\n");
+	tab[2] = ft_strdump("No such file or directory\n");
+	tab[3] = ft_strdump("No such process\n");
+	tab[4] = ft_strdump("Interrupted system call\n");
+	tab[5] = ft_strdump("I/O error\n");
+	tab[6] = ft_strdump("No such device or address\n");
+	tab[7] = ft_strdump("Argument list too long\n");
+	tab[8] = ft_strdump("Exec format error\n");
+	tab[9] = ft_strdump("Bad file number\n");
+	tab[10] = ft_strdump("No child processes\n");
+	tab[11] = ft_strdump("Try again\n");
+	tab[12] = ft_strdump("Out of memory\n");
+	tab[13] = ft_strdump("Permission denied\n");
+	tab[14] = ft_strdump("Bad address\n");
+	tab[15] = ft_strdump("Block device required\n");
+	tab[16] = ft_strdump("Device or resource busy\n");
+	tab[17] = ft_strdump("File exists\n");
+	tab[18] = ft_strdump("Cross-device link\n");
+	tab[19] = ft_strdump("No such device\n");
+	tab[20] = ft_strdump("Not a directory\n");
+	tab[21] = ft_strdump("Is a directory\n");
+	tab[22] = ft_strdump("Invalid argument\n");
+	tab[23] = ft_strdump("File table overflow\n");
+	tab[24] = ft_strdump("Too many open files\n");
 }
 static	void	init_tab_err_2(char **tab)
 {
-	tab[25] = ft_strdump("Not a typewriter");
-	tab[26] = ft_strdump("Text file busy");
-	tab[27] = ft_strdump("File too large");
-	tab[28] = ft_strdump("No space left on device");
-	tab[29] = ft_strdump("Illegal seek");
-	tab[30] = ft_strdump("Read-only file system");
-	tab[31] = ft_strdump("Too many links");
-	tab[32] = ft_strdump("Broken pipe");
-	tab[33] = ft_strdump("Math argument out of domain of func");
-	tab[34] = ft_strdump("Math result not representable");
+	tab[25] = ft_strdump("Not a typewriter\n");
+	tab[26] = ft_strdump("Text file busy\n");
+	tab[27] = ft_strdump("File too large\n");
+	tab[28] = ft_strdump("No space left on device\n");
+	tab[29] = ft_strdump("Illegal seek\n");
+	tab[30] = ft_strdump("Read-only file system\n");
+	tab[31] = ft_strdump("Too many links\n");
+	tab[32] = ft_strdump("Broken pipe\n");
+	tab[33] = ft_strdump("Math argument out of domain of func\n");
+	tab[34] = ft_strdump("Math result not representable\n");
 	tab[35] = NULL;
 }
 

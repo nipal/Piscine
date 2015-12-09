@@ -35,7 +35,7 @@ void	ft_putstr(char *str)
 char	*ft_strdump(char *str)
 {
 	int		i;
-	char	*dest
+	char	*dest;
 
 	i = 0;
 	dest = (char*)malloc((sizeof(char) + 1) * ft_strlen(str));

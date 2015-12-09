@@ -12,7 +12,7 @@
 
 #include "ft_atoi_verif.h"
 
-static	int	is_infinit(char *str)
+static	int	is_infit(char *str)
 {
 	char	c1;
 	char	c2;
@@ -35,11 +35,11 @@ int			ft_atoi_verif(char *str)
 
 	i = 0;
 	nbr = 0;
-	if (str[i] == '-')
+	if (*str[i] == '-')
 		i++;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+	while ((c >= 9 && c <= 13) || c == 32)
 		i++;
-	if (str[i] == '+')
+	if (*str[i] == '+')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{

@@ -12,6 +12,28 @@
 
 #include "main.h"
 
+int	main(int ac, char **av)
+{
+	int 	nb_char;
+	char	**tab_error;
+
+	if (ac <= 2)
+	{
+		ft_puterror("option requires an argument -- \'c\'\n");
+		return (1);
+	}
+	nb_char = ft_atoi_verif(av[2])
+	if (nb == WRONG_NUMBER)
+	{
+		ft_puterror("invalid number of bytes\n");
+		return (1);
+	}
+	tab_error = init_tab_err();
+	ft_manage_print(ac, av, nb_char, tab_error);
+	free_tab_err(tab_error);
+	return (0);
+}
+
 void	ft_manage_print(int ac, char **av, int nb_char, char **tab_error)
 {
 	int		i;
@@ -24,43 +46,21 @@ void	ft_manage_print(int ac, char **av, int nb_char, char **tab_error)
 	{
 		fd = open(av[i], O_RDONLY, S_IREAD);
 		if (errno)
-			ft_puterror(tab_error[errno]);
+			ft_putstr(tab_error[errno]);
 		else
 		{
-			if (ac > 4)
+			if (ac >= 5)
 			{
 				if (i == 4)
 					ft_putstr("\n");
 				ft_putstr("==> ");
 				ft_putstr(av[i]);
-				ft_putstr(" <==\n");
+				ft_putstr(" <==\n`");
 			}
 			ft_print_file(fd, nb_char);
 			close(fd);
 		}
 	}
-}
-
-int	main(int ac, char **av)
-{
-	int 	nb_char;
-	char	**tab_error;
-
-	if (ac <= 2)
-	{
-		ft_puterror("option requires an argument -- \'c\'\n");
-		return (1);
-	}
-	nb_char = ft_atoi_verif(av[2]);
-	if (nb_char == WRONG_NUMBER)
-	{
-		ft_puterror("invalid number of bytes\n");
-		return (1);
-	}
-	tab_error = init_tab_err();
-	ft_manage_print(ac, av, nb_char, tab_error);
-	free_tab_err(tab_error);
-	return (0);
 }
 
 

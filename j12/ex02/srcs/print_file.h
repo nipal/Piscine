@@ -24,6 +24,6 @@
 
 static	int		init_var(char **buff1, char **buff2, int *oct_lu, int nb_char);
 void			ft_print_file(char *name, int nb_char, int fd);
-static	void	close_var(char *buff_actif, char *buff_temp, int oct_lu);
+static	void	close_var(char *buff_actif, *buff_temp, int oct_lu);
 
 #endif

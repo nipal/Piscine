@@ -17,10 +17,10 @@
 # include <unistd.h>
 # define	BUFFER 100
 
-char	*ft_strcpy(char *dest, cahr *src);
+char	*ft_strcpy(char *dest, char *src);
 int		ft_strlen(char *str);
 void	ft_puterror(char *str);
 void	ft_putstr(char *str);
-char	*ft_strdump(char *str)
+char	*ft_strdump(const char *str)
 
 #endif
