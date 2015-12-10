@@ -34,7 +34,7 @@ INCL = $(addprefix srcs/,$(H))
 all : $(NAME)
 
 $(NAME) :
-	gcc $(FLAG) $(SRC) $(INCL) -o $(NAME)
+	gcc $(FLAG) $(SRC) -I includes -o $(NAME)
 clean :
 	rm -f $(NAME)
 re : clean all
