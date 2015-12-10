@@ -17,19 +17,12 @@ NAME = ft_cat
 
 S = main.c\
 	error.c\
-	ft_atoi_verif.c\
 	ft_ft.c\
 	print_file.c
 
-H = $(S:.c=.h)
-
 SRC = $(addprefix srcs/,$(S))
 
-HEAD = $(addprefix includes/,$(O))
-
 FLAG = -Wall -Wextra -Werror
-
-INCL = $(addprefix srcs/,$(H))
 
 all : $(NAME)
 
