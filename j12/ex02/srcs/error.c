@@ -74,6 +74,6 @@ char			**init_tab_err()
 	
 	tab_err = (char**)malloc((sizeof(char*) + 1) * 35);
 	init_tab_err_1(tab_err);
-	init_tab_err_1(tab_err);
+	init_tab_err_2(tab_err);
 	return (tab_err);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,12 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_C
-#define MAIN_C
+#ifndef MAIN_H
+#define MAIN_H
 
-#include "print_file.h"
-#include "ft_ft.h"
-#include "ft_atoi_verif.h"
-#include "error.h"
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include "print_file.h"
+# include <unistd.h>
+# include "ft_ft.h"
+# include "ft_atoi_verif.h"
+# include "error.h"
 
 #endif

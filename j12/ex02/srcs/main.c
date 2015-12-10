@@ -43,7 +43,7 @@ void	ft_manage_print(int ac, char **av, int nb_char, char **tab_error)
 
 int	main(int ac, char **av)
 {
-	int 	nb_char;
+	int 	 nb_char;
 	char	**tab_error;
 
 	if (ac <= 2)

@@ -23,16 +23,18 @@ S = main.c\
 
 H = $(S:.c=.h)
 
-SRC = $(addprefix src/,$(S))
+SRC = $(addprefix srcs/,$(S))
 
-flag = -Wall -Wextra -Werror
+HEAD = $(addprefix includes/,$(O))
 
-INCL = $(addprefix src/,$(H))
+FLAG = -Wall -Wextra -Werror
+
+INCL = $(addprefix srcs/,$(H))
 
 all : $(NAME)
 
 $(NAME) :
-	gcc  $(SRC) $(INCL) #-o $(NAME)
+	gcc $(FLAG) $(SRC) $(INCL) -o $(NAME)
 clean :
 	rm -f $(NAME)
 re : clean all

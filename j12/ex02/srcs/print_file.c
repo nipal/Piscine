@@ -12,7 +12,7 @@
 
 #include "print_file.h"
 
-static	int		init_var(char **buff1, char **buff2, int *oct_lu, int nb_char)
+int		init_var(char **buff1, char **buff2, int *oct_lu, int nb_char)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ static	int		init_var(char **buff1, char **buff2, int *oct_lu, int nb_char)
 	return (1);
 }
 
-static	void	close_var(char *buff_actif, char *buff_temp, int oct_lu, int nb_char)
+void	close_var(char *buff_actif, char *buff_temp, int oct_lu, int nb_char)
 {
 	if (nb_char != INFINIT_NUMBER)
 	{
@@ -43,7 +43,7 @@ static	void	close_var(char *buff_actif, char *buff_temp, int oct_lu, int nb_char
 	free(buff_temp);
 }
 
-void			ft_print_file(int fd, int nb_char)
+void	ft_print_file(int fd, int nb_char)
 {
 	int		oct_lu;
 	char	*buff_actif;
@@ -55,7 +55,7 @@ void			ft_print_file(int fd, int nb_char)
 	while (oct_lu == nb_char)
 	{
 		ft_swap_str(&buff_temp, &buff_actif);
-		oct_lu = read(fd, buff_actif, nb_char);
+		oct_lu = read(fd, buff_actif, (unsigned int)nb_char);
 		buff_actif[oct_lu] = '\0';
 		if (nb_char == INFINIT_NUMBER)
 			ft_putstr(buff_actif);
