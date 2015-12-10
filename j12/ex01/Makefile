@@ -15,16 +15,26 @@
 
 NAME = ft_cat
 
-S = main.c
+S = main.c\
+	error.c\
+	ft_atoi_verif.c\
+	ft_ft.c\
+	print_file.c
 
-O = $(S:.c=.o)
+H = $(S:.c=.h)
 
-#SRC = $(addprefix srcs/,$(S))
+SRC = $(addprefix srcs/,$(S))
+
+HEAD = $(addprefix includes/,$(O))
+
+FLAG = -Wall -Wextra -Werror
+
+INCL = $(addprefix srcs/,$(H))
 
 all : $(NAME)
 
 $(NAME) :
-	gcc -Wall -Wextra -Werror $(S) -o $(NAME)
+	gcc $(FLAG) $(SRC) -I includes -o $(NAME)
 clean :
 	rm -f $(NAME)
 re : clean all
