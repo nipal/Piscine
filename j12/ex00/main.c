@@ -14,7 +14,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#define	BUFFER 100
+#define	BUFFER 10
 
 int		ft_strlen(char *str)
 {
@@ -31,24 +31,23 @@ void	ft_puterror(char *str)
 	write(2, str, ft_strlen(str));
 }
 
-void	ft_putstr(char *str)
+void	ft_putstr(unsigned char *str, int nb_char)
 {
-	write(1, str, ft_strlen(str));
+	write(1, str, nb_char);
 }
 
 void	ft_print_file(char *name)
 {
-	int		fd;
-	int		oct_lu;
-	char	buff[BUFFER + 1];
+	int					fd;
+	int					oct_lu;
+	unsigned	char	buff[BUFFER];
 
 	fd = open(name, O_RDONLY, S_IREAD);
-	oct_lu = 1;
-	while (oct_lu)
+	oct_lu = BUFFER;
+	while (oct_lu == BUFFER)
 	{
 		oct_lu = read(fd, buff, BUFFER);
-		buff[oct_lu] = '\0';
-		ft_putstr(buff);
+		ft_putstr(buff, oct_lu);
 	}
 	close(fd);
 }
