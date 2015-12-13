@@ -15,7 +15,7 @@
 void	ft_print_file(int fd)
 {
 	int		oct_lu;
-	char	buff_actif[SIZE_BUFF + 1];
+	ucc 	buff_actif[SIZE_BUFF + 1];
 
 	oct_lu = SIZE_BUFF;
 	while (oct_lu == SIZE_BUFF)
@@ -24,6 +24,8 @@ void	ft_print_file(int fd)
 		buff_actif[oct_lu] = '\0';
 		ft_putstr(buff_actif, oct_lu);
 	}
+	if (ft_nb_char(0))
+		ft_put_line_number(1);
 }
 
 

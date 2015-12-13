@@ -16,10 +16,15 @@
 # include <errno.h>
 # include <unistd.h>
 # include <stdlib.h>
-# define	BUFFER 1000
+# include "print_file.h"
 
-void	ft_putchar(char c);
+typedef	unsigned	char	ucc;
+void	ft_putchar(ucc c);
 int		ft_strlen(char *str);
 void	ft_puterror(char *str);
-void	ft_putstr(char *str, int nb_char);
+void	ft_putstr(ucc *str, int nb_char);
+void	ft_put_line_number(int	last);
+int		ft_strcmp(ucc *str1, ucc *str2, int size_cmp);
+ucc		*ft_strdump(ucc *src);
+int		ft_nb_char(int incr);
 #endif

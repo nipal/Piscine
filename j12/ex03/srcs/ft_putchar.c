@@ -13,6 +13,14 @@
 #include "ft_ft.h"
 #include <stdio.h>
 
+int				ft_nb_char(int incr)
+{
+	static	int	count = 0;
+
+	count += incr;
+	return(count);
+}
+
 static	int		pow_16(int pow)
 {
 	int	i;
@@ -28,11 +36,11 @@ static	int		pow_16(int pow)
 	return (result);
 }
 
-static	void	addapt_char(int c, char *str)
+static	void	addapt_char(int c, ucc *str)
 {
-	char	*tab;
+	ucc	*tab;
 
-	tab = "abtnvfr";
+	tab = (ucc*)"abtnvfr";
 	str[0] = ' ';
 	str[1] = ' ';
 	str[2] = ' ';
@@ -54,29 +62,35 @@ static	void	addapt_char(int c, char *str)
 		str[3] = c;
 }
 
-void	ft_putchar(char c)
+void	ft_put_line_number(int	last)
 {
-	static	int	count = 0;
-	int			i;
-	char		*convert;
-	char		*oct;
+	int		i;
+	ucc		*convert;
+	int		nb_char = ft_nb_char(0);
 
-	oct = (char*)malloc((sizeof(char) + 1) * 4);
-	oct[4] = 0;
-	convert = "0123456789abcdef";
 	i = 0;
-	if ((count % 16) == 0)
+	convert = (ucc*)"0123456789abcdef";
+	if (nb_char)
+		write(1, "\n", 1);
+	while (i < 7)
 	{
-		if (count)
-			write(1, "\n", 1);
-		while (i < 7)
-		{
-			write(1, convert + ((count / pow_16(6 - i) ) % 16), 1);
-			i++;
-		}
+		write(1, convert + ((nb_char / pow_16(6 - i) ) % 16), 1);
+		i++;
 	}
+	if (last)
+		write(1, "\n", 1);
+}
+
+void	ft_putchar(ucc c)
+{
+	ucc	*oct;
+
+	oct = (ucc*)malloc(sizeof(ucc) * 4);
+	oct[4] = 0;
+	if ((ft_nb_char(0) % SIZE_BUFF) == 0)
+		ft_put_line_number(0);
 	addapt_char(c, oct);
 	write(1, oct, 4);
-	count++;
+	ft_nb_char(1);
 	free(oct);
 }

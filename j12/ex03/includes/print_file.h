@@ -19,7 +19,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include "ft_ft.h"
-# define SIZE_BUFF 1000
+# define SIZE_BUFF 16
 
 void	ft_print_file(int fd);
 
