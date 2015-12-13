@@ -23,8 +23,7 @@
 # include "ft_atoi_verif.h"
 # define SIZE_BUFF 1000
 
-int		init_var(char **buff1, char **buff2, int *oct_lu, int nb_char);
+typedef	unsigned	char ucc;
 void	ft_print_file(int fd, int nb_char);
-void	close_var(char *buff_actif, char *buff_temp, int oct_lu, int nb_var);
 
 #endif

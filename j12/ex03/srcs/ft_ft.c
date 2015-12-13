@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.h                                            :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,15 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FT_H
-#define FT_FT_H
+#include "ft_ft.h"
+int		ft_strlen(char *str)
+{
+	int	i;
 
-# include <errno.h>
-# include <unistd.h>
-# include <stdlib.h>
-# define	BUFFER 1000
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+void	ft_puterror(char *str)
+{
+	write(2, str, ft_strlen(str));
+}
 
-int		ft_strlen(char *str);
-void	ft_puterror(char *str);
-void	ft_putstr(unsigned char *str, int nb_char);
-#endif
+void	ft_putstr(char *str, int nb_char)
+{
+	int	i;
+
+	i = 0;
+	while (i < nb_char)
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+//	addapter un ft_putchar
+//		(7 case) numerot ligne en hexa si %16
+//		(4 case) imprimer le caracter avec asser d'espace
+
+//	traduir la valeur d'un character
+//		

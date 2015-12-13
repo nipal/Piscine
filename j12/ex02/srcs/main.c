@@ -30,10 +30,10 @@ void	ft_manage_print(int ac, char **av, int nb_char, char **tab_error)
 			if (ac > 4)
 			{
 				if (i == 4)
-					ft_putstr("\n");
-				ft_putstr("==> ");
-				ft_putstr(av[i]);
-				ft_putstr(" <==\n");
+					write(1, "\n", 1);
+				write(1,"==> ", 4);
+				write(1, av[i], ft_strlen(av[i]));
+				write(1, " <==\n", 5);
 			}
 			ft_print_file(fd, nb_char);
 			close(fd);

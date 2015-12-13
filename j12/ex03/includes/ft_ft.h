@@ -18,7 +18,8 @@
 # include <stdlib.h>
 # define	BUFFER 1000
 
+void	ft_putchar(char c);
 int		ft_strlen(char *str);
 void	ft_puterror(char *str);
-void	ft_putstr(unsigned char *str, int nb_char);
+void	ft_putstr(char *str, int nb_char);
 #endif

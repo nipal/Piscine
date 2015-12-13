@@ -12,7 +12,7 @@
 
 #include "print_file.h"
 
-int		init_var(char **buff1, char **buff2, int *oct_lu, int nb_char)
+static	int		init_var(ucc **buff1, ucc **buff2, int *oct_lu, int nb_char)
 {
 	int	i;
 
@@ -20,8 +20,8 @@ int		init_var(char **buff1, char **buff2, int *oct_lu, int nb_char)
 	*oct_lu = 1;
 	if (nb_char == INFINIT_NUMBER)
 		nb_char = SIZE_BUFF;
-	*buff1 = (char*)malloc(sizeof(char) * nb_char + 1);
-	*buff2 = (char*)malloc(sizeof(char) * nb_char + 1);
+	*buff1 = (ucc*)malloc(sizeof(ucc) * nb_char);
+	*buff2 = (ucc*)malloc(sizeof(ucc) * nb_char);
 	if (!buff1 || !buff2)
 		return (0);
 	while (i < nb_char)
@@ -32,23 +32,14 @@ int		init_var(char **buff1, char **buff2, int *oct_lu, int nb_char)
 	return (1);
 }
 
-void	close_var(char *buff_actif, char *buff_temp, int oct_lu, int nb_char)
+void			ft_print_file(int fd, int nb_char)
 {
-	if (nb_char != INFINIT_NUMBER)
-	{
-		ft_putstr(buff_temp + oct_lu);
-		ft_putstr(buff_actif);
-	}
-	free(buff_actif);
-	free(buff_temp);
-}
+	int	oct_lu;
+	ucc	*buff_actif;
+	ucc	*buff_temp;
+	int	nb_tour;
 
-void	ft_print_file(int fd, int nb_char)
-{
-	int		oct_lu;
-	char	*buff_actif;
-	char	*buff_temp;
-
+	nb_tour = 0;
 	if (!init_var(&buff_actif, &buff_temp, &oct_lu, nb_char))
 		return;
 	oct_lu = nb_char;
@@ -56,11 +47,18 @@ void	ft_print_file(int fd, int nb_char)
 	{
 		ft_swap_str(&buff_temp, &buff_actif);
 		oct_lu = read(fd, buff_actif, (unsigned int)nb_char);
-		buff_actif[oct_lu] = '\0';
 		if (nb_char == INFINIT_NUMBER)
-			ft_putstr(buff_actif);
+			ft_putstr(buff_actif, oct_lu);
+		nb_tour++;
 	}
-	close_var(buff_actif, buff_temp, oct_lu, nb_char);
+	if (nb_char != INFINIT_NUMBER)
+	{
+		if (nb_tour != 1)
+			ft_putstr(buff_temp + oct_lu, nb_char - oct_lu);
+		ft_putstr(buff_actif, oct_lu);
+	}
+	free(buff_actif);
+	free(buff_temp);
 }
 
 

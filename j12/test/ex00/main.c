@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_file.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,25 +10,55 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "print_file.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#define	BUFFER 10
 
-void	ft_print_file(int fd)
+int		ft_strlen(char *str)
 {
-	int					oct_lu;
-	unsigned	char	buff_actif[SIZE_BUFF];
+	int	i;
 
-	oct_lu = SIZE_BUFF;
-	while (oct_lu == SIZE_BUFF)
-	{
-		oct_lu = read(fd, buff_actif, SIZE_BUFF);
-		ft_putstr(buff_actif, oct_lu);
-	}
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
+void	ft_puterror(char *str)
+{
+	write(2, str, ft_strlen(str));
+}
 
-// atoi : ou renvoie une erreur (si le nombre est invalide || infini )	ok
-// buff actif + temporaire de la taille de ce qu'il y a a lire			ok
+void	ft_putstr(unsigned char *str, int nb_char)
+{
+	write(1, str, nb_char);
+}
 
-// on deroule tout le pregrame sans rien afficher						ok
-// on affiche le bout du temporaire qui va bien + le actif				ok
-// si le buffer > fichier le buffer_temp n'affiche rien					ok
+void	ft_print_file(char *name)
+{
+	int					fd;
+	int					oct_lu;
+	unsigned	char	buff[BUFFER];
+
+	fd = open(name, O_RDONLY, S_IREAD);
+	oct_lu = BUFFER;
+	while (oct_lu  == BUFFER)
+	{
+		oct_lu = read(fd, buff, BUFFER);
+		ft_putstr(buff, oct_lu);
+	}
+	close(fd);
+}
+
+int		main(int ac, char **av)
+{
+	if (ac == 1)
+		ft_puterror("File name missing.\n");
+	else if (ac > 2)
+		ft_puterror("Too many arguments.\n");
+	else
+		ft_print_file(av[1]);
+	return (0);
+}

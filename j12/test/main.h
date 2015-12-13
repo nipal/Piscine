@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.h                                            :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,15 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FT_H
-#define FT_FT_H
+#ifndef MAIN_H
+#define MAIN_H
 
-# include <errno.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 # include <unistd.h>
+# include <errno.h>
+# include <stdio.h>
+# include <string.h>
 # include <stdlib.h>
-# define	BUFFER 1000
 
-int		ft_strlen(char *str);
-void	ft_puterror(char *str);
-void	ft_putstr(unsigned char *str, int nb_char);
 #endif

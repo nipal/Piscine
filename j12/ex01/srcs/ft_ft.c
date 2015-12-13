@@ -27,7 +27,7 @@ void	ft_puterror(char *str)
 	write(2, str, ft_strlen(str));
 }
 
-void	ft_putstr(char *str)
+void	ft_putstr(unsigned char *str, int nb_char)
 {
-	write(1, str, ft_strlen(str));
+	write(1, str, nb_char);
 }

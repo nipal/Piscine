@@ -20,9 +20,9 @@
 # define	BUFFER 1000
 
 int		ft_strlen(char *str);
-void	ft_swap_str(char **str1, char **str2);
+void	ft_swap_str(unsigned char **str1, unsigned char **str2);
 void	ft_puterror(char *str);
-void	ft_putstr(char *str);
+void	ft_putstr(unsigned char *str, int nb_char);
 char	*ft_strdump(char *str);
 
 #endif

@@ -12,9 +12,9 @@
 
 #include "ft_ft.h"
 
-void	ft_swap_str(char **str1, char **str2)
+void	ft_swap_str(unsigned char **str1, unsigned char **str2)
 {
-	char	*temp;
+	unsigned	char	*temp;
 
 	temp = *str1;
 	*str1 = *str2;
@@ -36,9 +36,9 @@ void	ft_puterror(char *str)
 	write(2, str, ft_strlen(str));
 }
 
-void	ft_putstr(char *str)
+void	ft_putstr(unsigned char *str, int nb_char)
 {
-	write(1, str, ft_strlen(str));
+	write(1, str, nb_char);
 }
 
 char	*ft_strdump(char *str)

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.h                                            :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,15 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FT_H
-#define FT_FT_H
+#ifndef ERROR_H
+#define ERROR_H
 
-# include <errno.h>
-# include <unistd.h>
-# include <stdlib.h>
-# define	BUFFER 1000
+# include "ft_ft.h"
 
-int		ft_strlen(char *str);
-void	ft_puterror(char *str);
-void	ft_putstr(unsigned char *str, int nb_char);
+void	print_tab_err(int nb_err);
 #endif

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.h                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,15 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FT_H
-#define FT_FT_H
+#include "main.h"
 
-# include <errno.h>
-# include <unistd.h>
-# include <stdlib.h>
-# define	BUFFER 1000
+int	main(int ac, char **av)
+{
+	int		i;
+	int		fd;
 
-int		ft_strlen(char *str);
-void	ft_puterror(char *str);
-void	ft_putstr(unsigned char *str, int nb_char);
-#endif
+	i = 2;
+	if (ac == 1)
+		ft_puterror("missing operand\n");
+	if (ac == 2)
+ 		ft_print_file(0);
+	while (i < ac)
+	{
+		fd = open(av[i], O_RDONLY, S_IREAD);
+		if (errno)
+			print_tab_err(errno);
+		else
+		{
+			ft_print_file(fd);
+			close(fd);
+		}
+		i++;
+	}
+	return (0);
+}
+
+// ac == 1		pas d'option => missing operand -c
+// ac == 2		on lis sur l'entrer standar								ok
+// ac >= 2		on lis le/les fichier									ok
