@@ -6,7 +6,7 @@
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/19 21:07:28 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/10/21 14:17:21 by fjanoty          ###   ########.fr       */
+/*   Updated: 2015/12/16 18:53:22 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,23 @@
 
 void	ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
 {
-	t_list *elem;
-	t_list *tmp;
+	t_list	*elem;
+	t_list	*prev;
+	t_list	*insert;
 
+	insert = ft_create_elem(data);
+	if (!insert)
+		return ;
 	elem = *begin_list;
-	tmp = 0;
-	while (elem && (*cmp) (data, elem->data) < 0)
+	prev = 0;
+	while (elem && (*cmp)(insert->data, elem->data) > 0)
 	{
-		tmp = elem;
+		prev = elem;
 		elem = elem->next;
 	}
-	if (!elem && tmp)
-		elem = tmp;
-	else if (elem)
-	{
-		tmp = elem->next;
-		elem->next = ft_create_elem(data);
-		(elem->next)->next = tmp;
-	}
+	if (prev)
+		prev->next = insert;
 	else
-		*begin_list = ft_create_elem(data);
+		*begin_list = insert;
+	insert->next = elem;
 }
