@@ -6,37 +6,29 @@
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/19 21:07:28 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/10/21 14:17:21 by fjanoty          ###   ########.fr       */
+/*   Updated: 2015/12/15 20:48:07 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_sorted_list_insert(t_list **begin_list, *t_list insert, int (*cmp)())
+void	ft_sorted_list_insert(t_list **begin_list, t_list *insert, int (*cmp)())
 {
-	t_list *elem;
-	t_list *tmp;
+	t_list	*elem;
+	t_list	*prev;
 
 	elem = *begin_list;
-	tmp = 0;
-	while (elem && (*cmp) (data, elem->data) < 0)
+	prev = 0;
+	while (elem && (*cmp)(insert->data, elem->data) > 0)
 	{
-		tmp = elem;
+		prev = elem;
 		elem = elem->next;
 	}
-	if (!elem && tmp)
-		elem = tmp;
-	else if (elem)
-	{
-		tmp = elem->next;
-		elem->next = insert;
-		(elem->next)->next = tmp;
-	}
+	if (prev)
+		prev->next = insert;
 	else
-	{
 		*begin_list = insert;
-		(*begin_list)->next = 0;
-	}
+	insert->next = elem;
 }
 
 void	ft_sorted_list_merge(t_list **bgl1, t_list *bgl2, int (*cmp)())

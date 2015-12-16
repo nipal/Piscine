@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/19 21:07:28 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/10/21 14:17:21 by fjanoty          ###   ########.fr       */
+/*   Updated: 2015/12/16 20:27:25 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 int	ft_list_size(t_list *begin_list)
 {
-	int	i;
+	int		i;
+	t_list	*elem;
 
 	i = 0;
-	while (gebin_list && begin_list[i])
+	elem = begin_list;
+	while (elem)
+	{
+		elem = elem->next;
 		i++;
+	}
 	return (i);
 }

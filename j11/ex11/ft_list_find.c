@@ -6,13 +6,13 @@
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/19 21:07:28 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/10/21 14:17:21 by fjanoty          ###   ########.fr       */
+/*   Updated: 2015/12/15 20:15:40 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	ft_list_find(t_list *bgl,void *d_ref,int(*cmp)())
+t_list	*ft_list_find(t_list *bgl, void *d_ref, int (*cmp)())
 {
 	if (!bgl)
 		return (0);

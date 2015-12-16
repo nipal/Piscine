@@ -6,7 +6,7 @@
 /*   By: fjanoty <fjanoty@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/19 21:07:28 by fjanoty           #+#    #+#             */
-/*   Updated: 2015/12/16 20:24:59 by fjanoty          ###   ########.fr       */
+/*   Updated: 2015/12/16 02:46:39 by fjanoty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ typedef	struct		s_list
 	struct s_list	*next;
 	void			*data;
 }					t_list;
+typedef	struct		s_tab_list
+{
+	t_list			*elem0;
+	t_list			*elem1;
+	t_list			*elem2;
+}					t_tab_list;
 t_list				*ft_create_elem(void *data);
 t_list				*ft_list_last (t_list *begin_list);
 t_list				*ft_list_push_params(int ac, char **av);
