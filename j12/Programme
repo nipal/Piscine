@@ -1,8 +1,0 @@
--Tout repasser en unsigned char pour le buffer de read
-
--adapter les ft_putstr
-
-Pour ft_hexdump
-	-gerer le cas des ligne identique (donc avoir des buffer de 16 et un streqal)
-	-le putstr
-	-mettre le dernier  indice de ligne qui est celui du dernier caractere
